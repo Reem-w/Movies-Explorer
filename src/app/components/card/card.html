@@ -1,0 +1,30 @@
+<div class="card">
+  <div>
+    <img
+      [src]="
+        movie.poster_path ? imageBaseUrl + 'w500' + movie.poster_path : 'images/no_picture.png'
+      "
+      class="card-img-top"
+      alt="..."
+    />
+    <div class="rating basic-btn rating-btn">
+      <mat-icon class="mx-2">star</mat-icon>
+      <span>{{ movie.vote_average | number: '1.1-1' }}</span>
+    </div>
+    <span class="bookmark">
+      <mat-icon class="mx-2">bookmark-outline</mat-icon>
+    </span>
+    <div class="q-view">
+      <button class="basic-btn" [routerLink]="['/details',movie.id]">{{ 'VIEW_DETAILS' | translate }}</button>
+      <div class="overlay"></div>
+    </div>
+  </div>
+  <div class="card-body">
+    <h5 class="card-title">{{ movie.title }}</h5>
+    <div class="desc">
+      <span>{{movie.genre_names?.[0]}}</span>
+      <span class="mx-2">-</span>
+      <span>{{ movie.release_date | date: 'yyyy' }}</span>
+    </div>
+  </div>
+</div>

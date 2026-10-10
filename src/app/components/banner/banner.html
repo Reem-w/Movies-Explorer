@@ -1,0 +1,28 @@
+<div class="banner-container container m-4 mx-auto">
+  <img  alt="Banner Image" class="banner-image" />
+
+  <div class="banner-content">
+    <div class="d-flex align-items-center gap-2">
+      <p class="spotlighted-film">{{ 'SpotLighted_Film' | translate }}</p>
+      <div class="basic-btn rating-btn">
+        <mat-icon class="mx-2">star</mat-icon>
+        <span></span>
+      </div>
+    </div>
+    <h1 class="banner-title"></h1>
+    <p class="banner-description">
+     
+    </p>
+    <div class="d-flex align-items-center gap-2">
+      <button class="basic-btn banner-btn watch-now" (click)="goToDetails(currentMovie.id)">
+        <mat-icon class="mx-2">play_arrow</mat-icon>
+        {{ 'WATCH_NOW' | translate }}
+      </button>
+      <button class="basic-btn banner-btn secondary watch-list">
+        <mat-icon class="mx-2">bookmark</mat-icon>
+        {{ 'WATCH_LIST' | translate }}
+      </button>
+    </div>
+  </div>
+  <div class="overlay"></div>
+</div>

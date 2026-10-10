@@ -1,0 +1,19 @@
+<app-banner></app-banner>
+
+<div class="container mb-5">
+  <!-- <div class="row">
+    <div class="col-4">
+      <app-card></app-card>
+    </div>
+  </div> -->
+  <app-carousel-section
+    [Title]="'TRENDING' | translate"
+    [items]="popularMovies"
+  ></app-carousel-section>
+
+  <app-carousel-section
+    [Title]="'TOP_RATED' | translate"
+    [items]="topRatedMovies"
+  ></app-carousel-section>
+</div>
+

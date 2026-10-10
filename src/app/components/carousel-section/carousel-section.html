@@ -1,0 +1,16 @@
+<h2 class="mt-5 mb-3" [ngClass]="{ 'muted-color': mutedTitle }">{{ Title }}</h2>
+
+<p-carousel
+  [value]="items"
+  [numVisible]="5"
+  [numScroll]="3"
+  [circular]="true"
+  [responsiveOptions]="responsiveOptions"
+  [showIndicators]="false"
+  [showNavigators]="false"
+  [autoplayInterval]="4000"
+>
+  <ng-template let-movie pTemplate="item">
+    <app-card [movie]="movie"></app-card>
+  </ng-template>
+</p-carousel>

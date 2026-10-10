@@ -1,0 +1,83 @@
+.banner-container {
+  // background-color: var(--glass);
+  border-radius: 10px;
+  border: 1px solid var(--glass-border);
+  // padding: 20px;
+  // text-align: center;
+  position: relative;
+  overflow: hidden;
+  height: 80vh;
+  padding: 0;
+}
+
+.banner-image {
+  width: 100%;
+  height: 100%;
+  // border-radius: 10px;
+  opacity: 0.8;
+  object-fit: cover;
+  object-position: center 0%;
+  // animation: scaleImage 4s ease-in-out infinite;
+}
+
+// @keyframes scaleImage {
+//   from {
+//     transform: scale(1);
+//   }
+//   to {
+//     transform: scale(1.01);
+//   }
+// }
+
+.banner-content {
+  position: absolute;
+  inset-inline-start: 2rem;
+  bottom: 1.8rem;
+  z-index: 2;
+  width: 80%;
+  // top: 50%;
+  // left: 50%;
+  // transform: translate(-50%, -50%);
+  // color: var(--text-primary);
+  // text-align: center;
+}
+
+.overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  // background: linear-gradient(0deg, rgba(0, 0, 0, 0.5), transparent);
+  background: linear-gradient(10deg, var(--bg-primary), transparent);
+  z-index: 1;
+}
+
+.spotlighted-film {
+  background-color: var(--brand-dark);
+  color: var(--text-primary);
+  padding: 5px 10px;
+  margin-bottom: 0;
+  border-radius: var(--border-radius);
+  transition: background-color 0.3s ease;
+}
+
+.banner-btn {
+  color: var(--text-primary);
+  padding: 0.5rem 0.8rem;
+}
+
+.watch-now {
+  background-color: var(--brand-dark);
+  &:hover {
+    background-color: var(--brand-hover);
+  }
+}
+
+.watch-list {
+  background-color: var(--glass-bg);
+  border: 1px solid var(--glass-border);
+  &:hover {
+    background-color: var(--btn-hover-bg);
+  }
+}

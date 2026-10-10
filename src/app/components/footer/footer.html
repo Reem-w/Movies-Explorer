@@ -1,0 +1,97 @@
+
+<footer class="site-footer">
+  <div class="container">
+    <div class="row gy-4 footer-main">
+
+      <!-- Brand -->
+      <div class="col-lg-4 col-md-6">
+        <a routerLink="/home" class="footer-brand">
+          <mat-icon>movie</mat-icon>
+          <span>Movie Explorer</span>
+        </a>
+
+        <p class="footer-description">
+          {{ 'FOOTER_DESCRIPTION' | translate }}
+        </p>
+
+        <div class="social-links">
+          <a href="https://www.facebook.com/"
+             target="_blank"
+             rel="noopener noreferrer"
+             aria-label="Facebook">
+            <mat-icon>facebook</mat-icon>
+          </a>
+
+          <a href="https://www.instagram.com/"
+             target="_blank"
+             rel="noopener noreferrer"
+             aria-label="Instagram">
+            <mat-icon>camera_alt</mat-icon>
+          </a>
+
+          <a href="https://www.youtube.com/"
+             target="_blank"
+             rel="noopener noreferrer"
+             aria-label="YouTube">
+            <mat-icon>smart_display</mat-icon>
+          </a>
+        </div>
+      </div>
+
+      <!-- Explore -->
+      <div class="col-6 col-lg-2 col-md-6">
+        <h5>{{ 'EXPLORE' | translate }}</h5>
+
+        <ul class="footer-links">
+          <li><a routerLink="/home">{{ 'HOME' | translate }}</a></li>
+          <li><a routerLink="/trending">{{ 'TRENDING' | translate }}</a></li>
+          <li><a routerLink="/popular">{{ 'POPULAR' | translate }}</a></li>
+          <li><a routerLink="/top-rated">{{ 'TOP_RATED' | translate }}</a></li>
+        </ul>
+      </div>
+
+      <!-- My Library -->
+      <div class="col-6 col-lg-3 col-md-6">
+        <h5>{{ 'MY_LIBRARY' | translate }}</h5>
+
+        <ul class="footer-links">
+          <li><a routerLink="/watchlist">{{ 'WATCHLIST' | translate }}</a></li>
+          <li><a routerLink="/favorites">{{ 'FAVORITES' | translate }}</a></li>
+          <li><a routerLink="/genres">{{ 'GENRES' | translate }}</a></li>
+        </ul>
+      </div>
+
+      <!-- About -->
+      <div class="col-lg-3 col-md-6">
+        <h5>{{ 'ABOUT' | translate }}</h5>
+
+        <ul class="footer-links">
+          <li><a routerLink="/about">{{ 'ABOUT_US' | translate }}</a></li>
+          <li><a routerLink="/contact">{{ 'CONTACT' | translate }}</a></li>
+        </ul>
+
+        <p class="powered-by">
+          {{ 'POWERED_BY' | translate }}
+          <a href="https://www.themoviedb.org/"
+             target="_blank"
+             rel="noopener noreferrer">TMDB</a>
+        </p>
+      </div>
+
+    </div>
+
+    <!-- Bottom Footer -->
+    <div class="footer-bottom">
+      <p>
+        © {{ currentYear }} 
+        {{ 'ALL_RIGHTS_RESERVED' | translate }}
+      </p>
+
+      <p class="footer-credit">
+        <mat-icon>favorite</mat-icon>
+        {{ 'MADE_FOR_MOVIE_LOVERS' | translate }}
+      </p>
+    </div>
+  </div>
+</footer>
+

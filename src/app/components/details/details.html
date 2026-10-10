@@ -1,0 +1,108 @@
+<!-- <p>details works!</p> -->
+
+<section class="top-sec">
+  <img
+   *ngIf="movieDetails.backdrop_path"
+    [src]="
+    imageBaseUrl + 'w1280' + movieDetails.backdrop_path
+
+    "
+  />
+  <div class="overlay"></div>
+</section>
+
+<div class="container">
+  <section class="movie-desc d-flex flex-column flex-lg-row gap-5 pb-3 mb-3">
+    <img
+      [src]="
+        movieDetails.poster_path
+          ? imageBaseUrl + 'w342' + movieDetails.poster_path
+          : 'images/no_picture.png'
+      "
+      class="card-img-top"
+      alt="..."
+    />
+    <div class="info my-auto">
+      <div class="info-btns d-flex gap-2">
+        <div class="basic-btn rating-btn">
+          <mat-icon class="mx-2">star</mat-icon>
+          <span>{{ movieDetails.vote_average | number: '1.1-1' }}</span>
+        </div>
+        <div class="basic-btn rating-btn">
+          <!-- <mat-icon class="mx-2">star</mat-icon> -->
+          <span>4k Ultra HD</span>
+        </div>
+
+        <div class="basic-btn rating-btn glass-btn">
+          <!-- <mat-icon class="mx-2">star</mat-icon> -->
+          <span>{{ movieDetails.release_date | date: 'yyyy' }}</span>
+        </div>
+
+        <div class="basic-btn rating-btn glass-btn">
+          <!-- <mat-icon class="mx-2">star</mat-icon> -->
+          <span>{{ movieDetails.runtime }} min</span>
+        </div>
+      </div>
+
+      <h1 class="mt-3">{{ movieDetails.title }}</h1>
+      <div class="rounded-btns d-flex gap-2 mb-3">
+        <div class="basic-btn rounded-pill" *ngFor="let genre of movieDetails.genres">
+          <!-- <mat-icon class="mx-2">star</mat-icon> -->
+          <span>{{ genre.name }}</span>
+        </div>
+      </div>
+
+      <div class="big-btns d-flex align-items-center gap-2">
+        <button class="basic-btn banner-btn watch-now">
+          <mat-icon class="mx-2">play_arrow</mat-icon>
+          {{ 'WATCH_NOW' | translate }}
+        </button>
+        <button class="basic-btn banner-btn secondary watch-list">
+          <mat-icon class="mx-2">bookmark</mat-icon>
+          {{ 'WATCH_LIST' | translate }}
+        </button>
+      </div>
+    </div>
+  </section>
+
+  <section class="synopsis mt-5">
+    <h3>{{ 'SYNOPSIS' | translate }}</h3>
+    <p>
+      {{ movieDetails.overview }}
+    </p>
+  </section>
+
+  <section class="cast mt-5">
+    <h3>{{ 'CAST' | translate }}</h3>
+
+    <div class="row">
+      <div class="col-sm-6 col-md-4 col-lg-3 p-2" *ngFor="let member of cast">
+        <div class="cast-card basic-btn glass-btn gap-2 align-items-center">
+          <!-- <p class="letter rounded-circle glass-btn mb-0">{{ member.name.charAt(0) }}</p> -->
+          <div class="cast-img">
+            <img
+              [src]="
+                member.profile_path
+                  ? imageBaseUrl + 'w342' + member.profile_path
+                  : 'images/no_picture.png'
+              "
+            />
+          </div>
+          <div class="names">
+            <h4 class="mt-1">{{ member.name }}</h4>
+            <p class="mb-1">{{ member.character }}</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="synopsis" *ngIf="similarMovies.length>0">
+    <!-- <h3>{{ 'MIGHT_LIKE' | translate }}</h3> -->
+    <app-carousel-section
+      [Title]="'MIGHT_LIKE' | translate"
+      [items]="similarMovies"
+      [mutedTitle]="true"
+    ></app-carousel-section>
+  </section>
+</div>

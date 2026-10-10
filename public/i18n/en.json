@@ -1,0 +1,28 @@
+{
+  "HOME": "Home",
+  "MOVIES": "Movies",
+  "DARK_MODE": "Dark Mode",
+  "SEARCH": "Search...",
+  "SpotLighted_Film": "Spotlighted Film",
+  "WATCH_NOW": "Watch Now",
+  "WATCH_LIST": "Watchlist",
+  "VIEW_DETAILS": "View Details",
+  "MIGHT_LIKE":"You Might Also Like",
+
+
+   "FOOTER_DESCRIPTION": "Discover your next favorite movie.",
+  "EXPLORE": "Explore",
+  "TRENDING": "Trending",
+  "POPULAR": "Popular Movies",
+  "TOP_RATED": "Top Rated",
+  "MY_LIBRARY": "My Library",
+  "WATCHLIST": "Watchlist",
+  "FAVORITES": "Favorites",
+  "GENRES": "Genres",
+  "ABOUT": "About",
+  "ABOUT_US": "About Us",
+  "CONTACT": "Contact",
+  "POWERED_BY": "Movie data provided by",
+  "ALL_RIGHTS_RESERVED": "All rights reserved.",
+  "MADE_FOR_MOVIE_LOVERS": "Made for movie lovers"
+}

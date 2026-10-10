@@ -1,0 +1,135 @@
+.top-sec {
+  height: 60vh;
+  position: relative;
+  z-index: -1;
+}
+
+.top-sec img {
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+  object-position:  center 0% ;
+  // position: relative;
+}
+
+.overlay {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  height: 100%;
+  // background: linear-gradient(359deg, var(--bg-primary), transparent);
+  background: var(--gradient);
+  // background: linear-gradient(
+  // 359deg,
+  // #0f172a 0%,
+  // rgba(15, 23, 42, 0.9) 35%,
+  // rgba(15, 23, 42, 0.5) 65%,
+  // transparent 100%
+  // );
+
+  // background: linear-gradient(
+  //   359deg,
+  //   #0f172a 0%,
+  //   rgba(15, 23, 42, 0.95) 20%,
+  //   rgba(15, 23, 42, 0.7) 45%,
+  //   rgba(15, 23, 42, 0.3) 70%,
+  //   transparent 100%
+  // );
+}
+
+.container {
+  margin-top: -100px;
+}
+
+.movie-desc {
+  border-bottom: 1px solid rgba(255, 255, 255, 0.15);
+
+  img {
+    width: 20%;
+    // aspect-ratio: 1/1;
+    aspect-ratio: 2/3;
+    // object-fit: contain;
+    border-radius: var(--border-radius);
+  }
+
+  .info-btns .basic-btn:nth-child(2) {
+    background-color: var(--brand);
+    color: var(--brand-dark);
+    border-color: var(--brand-dark);
+  }
+}
+
+// .info-btns .basic-btn:nth-child(3),
+// .info-btns .basic-btn:nth-child(4),
+// .cast-card {
+//   background-color: var(--glass-bg) !important;
+//   color: var(--text-muted) !important;
+//   border: 1px solid var(--glass-border) !important;
+// }
+
+// .spotlighted-film {
+//   background-color: var(--brand-dark);
+//   color: var(--text-primary);
+//   padding: 5px 10px;
+//   margin-bottom: 0;
+//   border-radius: var(--border-radius);
+//   transition: background-color 0.3s ease;
+// }
+
+.big-btns .banner-btn {
+  color: var(--text-primary);
+  padding: 0.5rem 0.8rem;
+}
+
+.big-btns .watch-now {
+  background-color: var(--brand-dark);
+  &:hover {
+    background-color: var(--brand-hover);
+  }
+}
+
+.big-btns .watch-list {
+  background-color: var(--glass-bg);
+  border: 1px solid var(--glass-border);
+  &:hover {
+    background-color: var(--btn-hover-bg);
+  }
+}
+
+.rounded-btns .basic-btn.rounded-pill {
+  background-color: var(--glass-bg-dark);
+  color: var(--text-muted);
+  border-color: var(--glass-border);
+  padding: 5px;
+}
+
+.synopsis h3,
+.cast h3 {
+  color: var(--text-muted);
+}
+
+// .letter {
+//   padding: 10px 15px;
+//   background-color: var(--glass-bg);
+//   margin-inline-start: 15px;
+// }
+
+.cast-img {
+  width: 50px;
+  height: 50px;
+  flex-shrink: 0;
+  border-radius: 50%;
+  overflow: hidden;
+  margin-inline-start: 15px;
+}
+
+.cast-img img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 50%;
+}
+
+.cast-card .names h4 {
+  color: var(--text-primary);
+}
