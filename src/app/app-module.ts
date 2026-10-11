@@ -27,9 +27,10 @@ import { Details } from './components/details/details';
 import { MainPage } from './components/main-page/main-page';
 import { Footer } from './components/footer/footer';
 import { Explore } from './components/explore/explore';
+import { Genres } from './components/genres/genres';
 
 @NgModule({
-  declarations: [App, Navbar, Home, Banner, Card, CarouselSection, Details, MainPage, Footer, Explore],
+  declarations: [App, Navbar, Home, Banner, Card, CarouselSection, Details, MainPage, Footer, Explore, Genres],
   imports: [
     BrowserModule,
     AppRoutingModule,
