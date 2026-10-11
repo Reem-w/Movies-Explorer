@@ -9,7 +9,7 @@ const routes: Routes = [
     path: '',
     component: MainPage,
     children: [
-      { path: '', component: Home },
+      { path: '', redirectTo: 'home', pathMatch: 'full' },
       { path: 'home', component: Home },
       { path: 'details/:id', component: Details },
     ],
