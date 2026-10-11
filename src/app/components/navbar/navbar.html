@@ -93,7 +93,7 @@
             class="search-input"
             placeholder="{{ 'SEARCH' | translate }}"
             [(ngModel)]="searchQuery"
-            (input)="onSearchInput()"
+            (ngModelChange)="onSearchInput($event)"
           />
 
       <button

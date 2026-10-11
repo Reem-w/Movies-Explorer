@@ -5,6 +5,8 @@ import { Movie } from '../../shared/models/movie';
 import { Router } from '@angular/router';
 import { environment } from '../../../environments/environment';
 import { MovieService } from '../../shared/services/movieService/movie-service';
+import { catchError, debounceTime, distinctUntilChanged, map, of, Subject, switchMap } from 'rxjs';
+import { takeUntilDestroyed } from '@angular/core/rxjs-interop';
 
 @Component({
   selector: 'app-navbar',
@@ -17,15 +19,40 @@ export class Navbar implements OnInit {
   language: string = localStorage.getItem('movie-explorer-language') || 'en';
   isSearchOpen = false;
   searchQuery = '';
-  searchResults: Movie[] = [];
   baseImgUrl = environment.tmdb_imageBaseUrl;
+  searchResults: Movie[] = [];
+  private searchSubject = new Subject<string>();
 
   constructor(
     private themeService: ThemeService,
     private translate: TranslateService,
     private router: Router,
     private movieService: MovieService,
-  ) {}
+  ) {
+    this.searchSubject
+      .pipe(
+        map((query) => query.trim()),
+
+        debounceTime(1000),
+
+        distinctUntilChanged(),
+
+        switchMap((query) => {
+          return this.movieService.searchMovie(query).pipe(
+            map((res) => res.results),
+            catchError((err) => {
+              console.error('Failed to fetch popular movies:', err);
+              return of([]);
+            }),
+          );
+        }),
+
+        takeUntilDestroyed(),
+      )
+      .subscribe((results) => {
+        this.searchResults = results;
+      });
+  }
 
   ngOnInit(): void {
     this.isDarkMode = this.themeService.isDarkThemeOn();
@@ -45,15 +72,16 @@ export class Navbar implements OnInit {
     // console.log(` isDarkMode: ${this.isDarkMode}`);
   }
 
-  onSearchInput(): void {
-    this.movieService.searchMovie(this.searchQuery).subscribe({
-      next: (res) => {
-        this.searchResults = res.results;
-      },
-      error: (err) => {
-        console.error('Failed to fetch popular movies:', err);
-      },
-    });
+  onSearchInput(query: string): void {
+    // this.movieService.searchMovie(this.searchQuery).subscribe({
+    //   next: (res) => {
+    //     this.searchResults = res.results;
+    //   },
+    //   error: (err) => {
+    //     console.error('Failed to fetch popular movies:', err);
+    //   },
+    // });
+    this.searchSubject.next(query);
   }
 
   openSearchModal(): void {
